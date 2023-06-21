@@ -23,5 +23,23 @@ namespace MSTest_Registration
             //Assert
             Assert.AreEqual(expected, var);
         }
+        //UC2
+
+        [TestMethod]
+        public void LastName()
+        {
+            //Arrange
+
+            REGEX_Registration obj = new REGEX_Registration();
+
+            bool expected = true;
+            string LastName = "Dhurve";
+
+            //Act
+            bool var = obj.ValidateFirstName(LastName);
+
+            //Assert
+            Assert.AreEqual(expected, var);
+        }
     }
 }
