@@ -32,6 +32,15 @@ namespace UserRegistration
             return Regex.IsMatch(Email, E_Mail);
 
         }
+        //UC4
+
+        public static string PhNumber = "^91([ ])?[6-9]{1}[0-9]{9}$";
+
+        public bool ValidatePhNumber(string sample)
+        {
+            return Regex.IsMatch(sample, PhNumber);
+
+        }
     }
 }
 

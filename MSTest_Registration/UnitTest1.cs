@@ -59,5 +59,23 @@ namespace MSTest_Registration
             //Assert
             Assert.AreEqual(expected, var);
         }
+        //UC4
+
+        [TestMethod]
+        public void PhoneNo()
+        {
+            //Arrange
+
+            REGEX_Registration obj3 = new REGEX_Registration();
+
+            bool expected = true;
+            string PhNumber = "91 7798051897";
+
+            //Act
+            bool var = obj3.ValidatePhNumber(PhNumber);
+
+            //Assert
+            Assert.AreEqual(expected, var);
+        }
     }
 }
