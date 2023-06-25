@@ -347,6 +347,113 @@ namespace MSTest_Registration
             //Assert
             Assert.AreEqual("Successful Entry", result);
         }
+        //UC12 
+        //Throw Custom Exception in case of invalid User Details 
+        [TestMethod]
+        [DataRow("123Hemant")]
+
+        //For Invalid First Name
+        public void TestFirstName(string fName)
+        {
+            try
+            {
+                //Arrange
+                UserRegister user = new UserRegister();
+
+                //Act
+                user.CheckFirstName(fName);
+            }
+            catch (UserRegCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("First Name is Invalid", e.Message);
+            }
+        }
+
+        [TestMethod]
+        [DataRow("Dhurve1254")]
+
+        //For Invalid Last Name
+        public void TestLastName(string lName)
+        {
+            try
+            {
+                //Arrange
+                UserRegister user = new UserRegister();
+
+                //Act
+                user.CheckLastName(lName);
+            }
+            catch (UserRegCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Last Name is Invalid", e.Message);
+            }
+        }
+
+
+        [TestMethod]
+        [DataRow("hemant@dhurve007@gmail.com")]
+
+        //For Invalid Email
+        public void TestEmail(string email)
+        {
+            try
+            {
+                //Arrange
+                UserRegister user = new UserRegister();
+
+                //Act
+                user.CheckEmail(email);
+            }
+            catch (UserRegCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Email is Invalid", e.Message);
+            }
+        }
+
+        [TestMethod]
+        [DataRow("91 7798dsa222")]
+
+        //For Invalid Phone Number
+        public void TestPhNumber(string phnumber)
+        {
+            try
+            {
+                //Arrange
+                UserRegister user = new UserRegister();
+
+                //Act
+                user.CheckPhoneNumber(phnumber);
+            }
+            catch (UserRegCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Phone Number is Invalid", e.Message);
+            }
+        }
+
+        [TestMethod]
+        [DataRow("ws345%$#sd")]
+
+        //For Invalid Password
+        public void TestPassword(string password)
+        {
+            try
+            {
+                //Arrange
+                UserRegister user = new UserRegister();
+
+                //Act
+                user.CheckPassword(password);
+            }
+            catch (UserRegCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Password is Invalid", e.Message);
+            }
+        }
 
     }
 }
