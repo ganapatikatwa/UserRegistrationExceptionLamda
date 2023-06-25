@@ -315,6 +315,7 @@ namespace MSTest_Registration
             Assert.AreEqual("Successful Entry", result);
         }
 
+
         [TestMethod]
         [DataRow("Sad")]
 
@@ -330,5 +331,6 @@ namespace MSTest_Registration
             //Assert
             Assert.AreEqual("Un-Successful Entry", result);
         }
+
     }
 }
